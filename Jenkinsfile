@@ -5,7 +5,7 @@ pipeline {
     agent {
         label 'java-agent-slave'
     }
-    Stages {
+    stages {
         stage ('Build') {
             steps {
                 echo "This is the stage for Building MVN app"

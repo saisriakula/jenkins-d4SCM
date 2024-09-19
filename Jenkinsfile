@@ -10,7 +10,6 @@ pipeline{
                 sh 'mvn --version'
             }
         }
-    stages {
         stage ('Maven') {
             steps {
                 tools {

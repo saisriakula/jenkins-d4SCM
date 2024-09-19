@@ -1,14 +1,14 @@
-// Timeout
-pipeline {
+pipeline{
     agent any
+    tools {
+        maven "MAVEN_PATH"
+    }
     stages {
-        stage ('Timeout Stage'){
+        stage ('Maven') {
             steps {
-                timeout(time: 1, unit: 'SECONDS'){
-                    echo "Sleeping for 60 seconds"
-                    sleep 60
-                }  
-           }
+                echo "*****Maven Version*****"
+                sh 'mvn --version'
+            }
         }
     }
 }

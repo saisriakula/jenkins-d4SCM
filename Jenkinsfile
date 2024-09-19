@@ -1,14 +1,14 @@
 // Timeout
-pipeline{
+pipeline {
     agent any
-    stages{
+    stages {
         stage ('Timeout Stage'){
-            steps{
+            steps {
                 timeout(time: 1, unit: SECONDS){
                     echo "Sleeping for 60 seconds"
                     sleep 60
                 }  
-            }
+           }
         }
     }
 }

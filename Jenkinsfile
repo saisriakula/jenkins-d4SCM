@@ -1,4 +1,4 @@
-pipeline{
+pipeline {
     agent any
     tools {
         maven "MAVEN_PATH"
@@ -13,7 +13,7 @@ pipeline{
         stage ('Maven') {
             steps {
                 tools {
-                    jdk 'jdk-17'
+                    jdk 'JDK-17'
                 }
                 echo "*****Maven Version with my custom java /opt*****"
                 sh 'mvn --version'

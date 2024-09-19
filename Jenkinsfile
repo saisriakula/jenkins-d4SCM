@@ -10,11 +10,11 @@ pipeline {
                 sh 'mvn --version'
             }
         }
-        stage ('Maven') {
+        stage ('SpecificStage') {
+            tools {
+                jdk 'JDK-17'
+            }
             steps {
-                tools {
-                    jdk 'JDK-17'
-                }
                 echo "*****Maven Version with my custom java /opt*****"
                 sh 'mvn --version'
             }

@@ -1,7 +1,7 @@
 // retry for multiple attempts
 // timeout for time limit enfore
 pipeline{
-    agents any
+    agent any
     stages{
         stage ('Build'){
             steps{

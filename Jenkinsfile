@@ -1,16 +1,13 @@
-// retry for multiple attempts
-// timeout for time limit enfore
+// Timeout
 pipeline{
     agent any
     stages{
-        stage ('Build'){
+        stage ('Timeout Stage'){
             steps{
-                echo  "*****Entering Build Block****"
-                retry(3){
-                    echo "Welcome to D4"
-                    error "Tsting the retry block"
-                }
-                echo "After 3 retrys executed"
+                timeout(time:1, unit: SECONDS){
+                    echo "Sleeping for 60 seconds"
+                    sleep 60
+                }  
             }
         }
     }

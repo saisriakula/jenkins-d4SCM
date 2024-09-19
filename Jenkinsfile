@@ -8,9 +8,9 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                echo "This is the stage for Building MVN app"-i
+                echo "This is the stage for Building MVN app"
                 //linux commands
-                sh 'hostname '
+                sh 'hostname -i'
             }
         }
         stage ('ScriptedStage') {

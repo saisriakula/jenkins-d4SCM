@@ -1,32 +1,16 @@
-// Script:
-//pipeline > stages > stage >setps > script
-// It allows us to write our custorm ccode in groovy
-pipeline {
-    agent {
-        label 'java-agent-slave'
-    }
-    stages {
-        stage ('Build') {
-            steps {
-                echo "This is the stage for Building MVN app"
-                //linux commands
-                sh 'hostname -i'
-            }
-        }
-        stage ('ScriptedStage') {
-            steps {
-                echo "Executing Scripted Stage"
-                // Write some Custom Code
-                script {
-                    // Defining a variable
-                    def course = "k8s"
-                    if (course == "k8s") {
-                        println("Thanks for enrolling into $course")
-                    }
-                    else
-                        println("Do learn k8s")
-                    }
-                    sleep 10
+// retry for multiple attempts
+// timeout for time limit enfore
+pipeline{
+    agents any
+    stages{
+        stage ('Build'){
+            steps{
+                echo  "*****Entering Build Block****"
+                retry(3){
+                    echo "Welcome to D4"
+                    error "Tsting the retry block"
+                }
+                echo "After 3 retrys executed"
             }
         }
     }

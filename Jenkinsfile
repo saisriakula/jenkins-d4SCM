@@ -8,7 +8,9 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                echo "This is the stage for Building MVN app"
+                echo "This is the stage for Building MVN app"-i
+                //linux commands
+                sh 'hostname '
             }
         }
         stage ('ScriptedStage') {
@@ -23,7 +25,8 @@ pipeline {
                     }
                     else
                         println("Do learn k8s")
-                }
+                    }
+                    sleep 10
             }
         }
     }
